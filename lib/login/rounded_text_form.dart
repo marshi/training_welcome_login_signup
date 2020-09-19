@@ -5,7 +5,14 @@ import '../constants.dart';
 class RoundedTextForm extends StatelessWidget {
   const RoundedTextForm({
     Key key,
+    this.icon,
+    this.suffixIcon,
+    this.obscure = false,
   }) : super(key: key);
+
+  final IconData icon;
+  final IconData suffixIcon;
+  final bool obscure;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +25,10 @@ class RoundedTextForm extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
       ),
       child: TextField(
+        obscureText: obscure,
         decoration: InputDecoration(
-          icon: Icon(Icons.person),
+          icon: Icon(icon),
+          suffixIcon: Icon(suffixIcon),
           border: InputBorder.none,
         ),
       ),
