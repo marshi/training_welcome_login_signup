@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/login/login_page.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constants.dart';
@@ -30,12 +31,24 @@ class TopPage extends StatelessWidget {
             ),
             SizedBox(height: 40),
             RoundedButton(
+              function: () {
+                print("aiueo");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return LoginPage();
+                  }),
+                );
+              },
               text: "LOGIN",
               textColor: Colors.white,
               backgroundColor: Colors.deepPurple,
             ),
             SizedBox(height: 20),
             RoundedButton(
+              function: () {
+                print("signup");
+              },
               text: "SIGN UP",
               textColor: Colors.black,
               backgroundColor: pimaryLightColor,
