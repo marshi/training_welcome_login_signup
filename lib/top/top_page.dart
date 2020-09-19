@@ -1,6 +1,10 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../constants.dart';
+import 'component/background.dart';
+import 'component/rounded_button.dart';
 
 class TopPage extends StatelessWidget {
   const TopPage({
@@ -9,25 +13,35 @@ class TopPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      width: size.width,
-      height: size.height,
-      child: Stack(
-        children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            width: size.width * 0.3,
-            child: Image.asset("assets/images/main_top.png"),
-          ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            width: size.width * 0.3,
-            child: Image.asset("assets/images/main_bottom.png"),
-          )
-        ],
+    var size = MediaQuery.of(context).size;
+    return Background(
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "WELCOME TO ED",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 40),
+            SvgPicture.asset(
+              "assets/icons/chat.svg",
+              height: size.height * 0.45,
+            ),
+            SizedBox(height: 40),
+            RoundedButton(
+              text: "LOGIN",
+              textColor: Colors.white,
+              backgroundColor: Colors.deepPurple,
+            ),
+            SizedBox(height: 20),
+            RoundedButton(
+              text: "SIGN UP",
+              textColor: Colors.black,
+              backgroundColor: pimaryLightColor,
+            ),
+          ],
+        ),
       ),
     );
   }
