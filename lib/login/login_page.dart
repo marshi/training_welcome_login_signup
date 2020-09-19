@@ -10,29 +10,31 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: LoginBackground(
-        child: Container(
-          alignment: Alignment.center,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "LOGIN",
-                style: TextStyle(fontSize: 16),
-              ),
-              SvgPicture.asset(
-                "assets/icons/login.svg",
-                width: size.width * 0.8,
-              ),
-              SizedBox(height: 20),
-              RoundedTextForm(icon: Icons.person),
-              SizedBox(height: 20),
-              RoundedTextForm(
-                icon: Icons.lock,
-                suffixIcon: Icons.visibility,
-                obscure: true,
-              ),
-            ],
+      body: SingleChildScrollView(
+        child: LoginBackground(
+          child: Container(
+            alignment: Alignment.center,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "LOGIN",
+                  style: TextStyle(fontSize: 16),
+                ),
+                SvgPicture.asset(
+                  "assets/icons/login.svg",
+                  width: size.width * 0.8,
+                ),
+                SizedBox(height: 20),
+                RoundedTextForm(icon: Icons.person),
+                SizedBox(height: 20),
+                RoundedTextForm(
+                  icon: Icons.lock,
+                  suffixIcon: Icons.visibility,
+                  obscure: true,
+                ),
+              ],
+            ),
           ),
         ),
       ),
