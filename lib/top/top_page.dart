@@ -51,7 +51,7 @@ class TopPage extends StatelessWidget {
               },
               text: "SIGN UP",
               textColor: Colors.black,
-              backgroundColor: pimaryLightColor,
+              backgroundColor: primaryLightColor,
             ),
           ],
         ),

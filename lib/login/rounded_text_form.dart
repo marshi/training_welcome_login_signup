@@ -21,7 +21,7 @@ class RoundedTextForm extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       width: size.width * 0.8,
       decoration: BoxDecoration(
-        color: pimaryLightColor,
+        color: primaryLightColor,
         borderRadius: BorderRadius.circular(30),
       ),
       child: TextField(
